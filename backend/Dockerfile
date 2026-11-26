@@ -5,10 +5,10 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1
 
 WORKDIR /app
-COPY backend/requirements.txt /app/backend/requirements.txt
+COPY requirements.txt /app/backend/requirements.txt
 RUN python -m pip install --no-cache-dir -r /app/backend/requirements.txt
 
-COPY backend/ /app/backend/
+COPY . /app/backend/
 WORKDIR /app/backend
 ENV PYTHONPATH=/app/backend
 EXPOSE 8000
